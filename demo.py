@@ -3,7 +3,7 @@ con = sqlite3.connect("part2.db")
 cur = con.cursor()
 
 #izveidot tabulu
-cur.execute("CREATE TABLE movie(title, year, score)")
+cur.execute("CREATE TABLE IF NOT EXISTS movie(title, year, score)")
 
 #apskatīt, kādas tabulas eksistē
 res = cur.execute("SELECT name FROM sqlite_master")
